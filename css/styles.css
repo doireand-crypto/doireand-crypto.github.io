@@ -11052,31 +11052,32 @@ header.masthead h1, header.masthead .h1 {
     font-weight: 600;
     color: white;
 }
-
 /* 移动端样式修复 */
 @media (max-width: 768px) {
     .portfolio-box {
-        height: 300px; /* 移动端也保持固定高度 */
+        height: 300px;
     }
     
     .portfolio-box.active {
-        background: rgba(0, 0, 0, 0.7); /* 半透明黑色背景 */
+        background: rgba(0, 0, 0, 0.7) !important; /* 强制使用半透明黑色背景 */
     }
     
     .portfolio-box.active img {
-        display: none; /* 隐藏图片 */
+        display: none;
     }
     
     .portfolio-box.active .portfolio-box-caption {
         position: relative;
         opacity: 1;
-        background: transparent; /* 透明背景，因为父元素已经有背景 */
+        background: transparent !important; /* 确保内部背景透明 */
         height: 100%;
         padding: 30px;
+        display: flex !important;
     }
     
     .portfolio-box.active .project-name {
-        display: block; /* 显示项目名称 */
+        display: block;
+        color: white !important;
     }
     
     .portfolio-box.active .project-category {
@@ -11085,6 +11086,6 @@ header.masthead h1, header.masthead .h1 {
         text-align: center;
         width: 100%;
         margin: 0 0 15px 0;
-        color: #ecf0f1;
+        color: #ecf0f1 !important; /* 确保文字颜色正确 */
     }
 }
