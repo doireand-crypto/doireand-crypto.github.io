@@ -57,3 +57,28 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const portfolioBoxes = document.querySelectorAll('.portfolio-box');
+    
+    portfolioBoxes.forEach(box => {
+        box.addEventListener('click', function() {
+            // 检测是否为移动设备
+            if (window.innerWidth <= 768) {
+                // 移除其他项目的active状态
+                portfolioBoxes.forEach(b => {
+                    if (b !== this) b.classList.remove('active');
+                });
+                
+                // 切换当前项目的active状态
+                this.classList.toggle('active');
+            }
+        });
+    });
+    
+    // 点击页面其他地方时关闭描述
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.portfolio-box')) {
+            portfolioBoxes.forEach(b => b.classList.remove('active'));
+        }
+    });
+});

@@ -10992,4 +10992,39 @@ header.masthead h1, header.masthead .h1 {
 }
 #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption, #portfolio .container-sm .portfolio-box:hover .portfolio-box-caption, #portfolio .container-md .portfolio-box:hover .portfolio-box-caption, #portfolio .container-lg .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
+}/* 移动端样式 */
+@media (max-width: 768px) {
+    .portfolio-box {
+        height: auto;
+    }
+    
+    .portfolio-box.active {
+        height: auto;
+        min-height: 200px;
+    }
+    
+    .portfolio-box.active img {
+        display: none;
+    }
+    
+    .portfolio-box.active .portfolio-box-caption {
+        position: relative;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.7);
+        height: auto;
+        min-height: 200px;
+        padding: 30px;
+    }
+    
+    .portfolio-box.active .project-name {
+        display: none;
+    }
+    
+    .portfolio-box.active .project-category {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
 }
